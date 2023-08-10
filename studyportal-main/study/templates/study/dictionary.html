@@ -1,0 +1,24 @@
+{% extends 'study/base.html' %} 
+{% load static %} 
+{% block content %}
+<section class='text-center container py-5'>
+    <h2>Student Dictionary</h2>
+    <p>Enter any word to get its meaning </p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input class="btn btn-danger" type="submit" value="Submit">
+    </form>
+    <br>
+    <div class="content-section p-0 mt-5 py-4">
+        <div class="custom-header">
+            <h2>{{input}}</h2>
+        </div>
+        <hr class="p-0 m-0">
+        <p class="float-left">
+            <h4>Definition : {{definition}}</h4>
+        </p>
+        <hr>
+    </div>
+</section>
+{% endblock content %}
